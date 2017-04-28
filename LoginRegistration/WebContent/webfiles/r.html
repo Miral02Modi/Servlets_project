@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function validateform() {
+
+		var name = document.getElementsByName("Name")[0].value;
+		var password = document.getElementsByName("password")[0].value;
+		var department = document.getElementsByName("dName")[0].value;
+
+		if (name === "") {
+			alert("Name can't be blank");
+			return false;
+		}
+
+		if (password == "") {
+			alert("Password can't be blank");
+			return false;
+		}
+
+		if (department == "") {
+			alert("department can't be blank");
+			return false;
+		}
+		
+	}
+
+	/* function emailIDValid(inputText) {
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		if (inputText.value.match(mailformat)) {
+			document.write(inputText.value.match(mailformat));
+			return true;
+		}else{
+			return false;
+		}
+	} */
+</script>
+</head>
+<body onload='document.register.id.focus()'>
+	<table>
+		<form action="first" method="post" name="register"
+			onsubmit="return validateform()">
+			<!-- -->
+		<tr>
+			<td>Id</td>
+			<td><input type="number" name="id" min="1" max="10000">
+		</tr>
+
+		<tr>
+			<td>Name</td>
+			<td><input type="text" name="Name"></td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td><input type="password" name="password"></td>
+		</tr>
+		<tr>
+			<td>Date of birth</td>
+			<td><input type="date" name="bday"></td>
+		</tr>
+		<tr>
+			<td>Gender</td>
+			<td><input type="radio" name="gender" value="Male" checked>Male
+				<input type="radio" name="gender" value="FeMale">Female <input
+				type="radio" name="gender" value="other">Other</td>
+		</tr>
+		<tr>
+			<td>Department Name</td>
+			<td><input type="text" name="dName"></td>
+		</tr>
+		<tr>
+			<td>Email Id</td>
+			<td><input type="text" name="emailid"></td>
+		</tr>
+		<tr>
+			<td>Contact Number</td>
+			<td><input name="phoneNumber"></td>
+		</tr>
+		<tr>
+			<td><input type="Submit" name="Register" value="Register"></td>
+			<td><input type="Reset" name="Reset" value="reset"></td>
+		</tr>
+		</form>
+	</table>
+</body>
+</html>
